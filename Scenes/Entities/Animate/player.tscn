@@ -1,15 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcg627wdcgwm"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Dynamic/Player.cs" id="1_s2k7s"]
+[ext_resource type="Script" path="res://Scripts/Entities/Animate/Player.cs" id="1_ntcrx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31xry"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_s2k7s")
+script = ExtResource("1_ntcrx")
+max_speed = 24.0
+acceleration_time = 1.5
+deceleration_time = 0.3
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+polygon = PackedVector2Array(-7, 7, 7, 7, 7, -7, -7, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_31xry")
