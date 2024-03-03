@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Connection" load_steps=2 format=3 uid="uid://vvsfxbvwxcbk"]
+
+[ext_resource type="Script" path="res://Scripts/Tools/Connection.cs" id="1_pemw5"]
+
+[resource]
+script = ExtResource("1_pemw5")

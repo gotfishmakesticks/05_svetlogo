@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6v4u8q4f0idh"]
 
 [ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/box_normal.tscn" id="1_ywi7x"]
-[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/StickyInanimate.cs" id="2_kexrr"]
+[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/Circle.cs" id="2_kexrr"]
 [ext_resource type="Texture2D" uid="uid://dsf6bnfp5k5g4" path="res://Sprites/Entities/Inanimate/BS.png" id="3_0dycm"]
 
 [node name="BoxSticky" instance=ExtResource("1_ywi7x")]

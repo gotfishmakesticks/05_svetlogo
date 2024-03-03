@@ -3,14 +3,16 @@ using Godot.Collections;
 
 namespace _svetlogo.Tools
 {
-	public partial class ToolContainer : Node
-	{
+    public partial class ToolContainer : Node
+    {
 
-		private Array<Tool> avaiableTools = new();
+        [Export] private Array<Tool> avaiableTools = new();
         private int currentTool = 0;
 
         public override void _Process(double delta)
         {
+            GD.Print(avaiableTools.Count);
+            if (avaiableTools.Count == 0) return;
             avaiableTools[currentTool].Process(delta);
         }
 
@@ -26,6 +28,21 @@ namespace _svetlogo.Tools
             currentTool = tool;
 
             avaiableTools[currentTool].OnSelect();
+        }
+
+        public Tool GetTool()
+        {
+            return avaiableTools[currentTool];
+        }
+
+        public void AddTool(Tool tool)
+        {
+            avaiableTools.Add(tool);
+        }
+        
+        public void RemoveTool(Tool tool)
+        {
+            avaiableTools.Remove(tool);
         }
 
     }

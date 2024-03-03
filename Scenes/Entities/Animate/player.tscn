@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcg627wdcgwm"]
+[gd_scene load_steps=6 format=3 uid="uid://dcg627wdcgwm"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Animate/Player.cs" id="1_ntcrx"]
+[ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerMovement.cs" id="1_vfxkw"]
+[ext_resource type="Script" path="res://Scripts/Tools/ToolContainer.cs" id="2_cdpo8"]
+[ext_resource type="PackedScene" uid="uid://d1bvgnd07usfv" path="res://Scenes/cursor.tscn" id="2_ispvi"]
+[ext_resource type="Resource" uid="uid://vvsfxbvwxcbk" path="res://Resources/Tools/Weld.tres" id="3_7ncg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31xry"]
+custom_solver_bias = 1.0
 size = Vector2(14, 14)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_ntcrx")
+script = ExtResource("1_vfxkw")
 max_speed = 24.0
 acceleration_time = 1.5
 deceleration_time = 0.3
+mass = 1.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-7, 7, 7, 7, 7, -7, -7, -7)
@@ -21,7 +26,10 @@ shape = SubResource("RectangleShape2D_31xry")
 wait_time = 0.2
 one_shot = true
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 0, 0)
+[node name="ToolContainer" type="Node" parent="."]
+script = ExtResource("2_cdpo8")
+avaiableTools = [ExtResource("3_7ncg6"), ExtResource("3_7ncg6"), ExtResource("3_7ncg6")]
+
+[node name="Cursor" parent="ToolContainer" instance=ExtResource("2_ispvi")]
 
 [connection signal="timeout" from="JumpCacheTimer" to="." method="JumpCacheTimeout"]

@@ -1,16 +1,20 @@
+using _svetlogo.Tools;
 using Godot;
 using System;
 
 namespace _svetlogo.Entities.Animate
 {
-	public partial class Player : CharacterBody2D
+	public partial class PlayerMovement : CharacterBody2D
 	{
 		const float gravity = 98.1f;
-		const float jumpForce = 50f;
+		const float jumpForce = 75f;
 
-		[Export] private float max_speed;
+		public ToolContainer ToolContainer {  get; private set; }
+
+        [Export] private float max_speed;
 		[Export] private float acceleration_time;
 		[Export] private float deceleration_time;
+		[Export] private float mass;
 
 		private bool jump_cached;
 		private float acceleration;
@@ -25,6 +29,8 @@ namespace _svetlogo.Entities.Animate
 			deceleration = max_speed / deceleration_time;
 
 			jump_cache_timer = GetNode<Timer>("JumpCacheTimer");
+
+			ToolContainer = GetNode<ToolContainer>("ToolContainer");
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -74,6 +80,19 @@ namespace _svetlogo.Entities.Animate
 
 			Velocity = velocity;
 			MoveAndSlide();
+
+			for (int i = 0; i < GetSlideCollisionCount(); i++)
+			{
+				var collision = GetSlideCollision(i);
+				if (collision != null)
+				{
+					var collider = collision.GetCollider();
+					if (collider is RigidBody2D rigid)
+					{
+						rigid.ApplyImpulse(-collision.GetNormal() * mass,rigid.ToLocal(collision.GetPosition()));
+					}
+				}
+			}
         }
 
 		public void JumpCacheTimeout()

@@ -14,6 +14,10 @@ config/name="05_svetlogo"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ToolContainer="*res://Scripts/Tools/ToolContainer.cs"
+
 [dotnet]
 
 project/assembly_name="05_svetlogo"
@@ -41,7 +45,7 @@ jump={
 
 [physics]
 
-2d/physics_engine="Box2D"
+2d/solver/default_constraint_bias=0.0
 
 [rendering]
 
