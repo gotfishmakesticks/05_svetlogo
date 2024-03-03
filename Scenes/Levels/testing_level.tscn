@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxh0mp5tse2u7"]
+[gd_scene load_steps=6 format=3 uid="uid://cxh0mp5tse2u7"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjjo3aiwuk0" path="res://Scenes/Tilemaps/main.tscn" id="1_guvql"]
 [ext_resource type="PackedScene" uid="uid://dcg627wdcgwm" path="res://Scenes/Entities/Animate/player.tscn" id="2_ggxfe"]
+[ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/box_normal.tscn" id="3_jnfkr"]
+[ext_resource type="PackedScene" uid="uid://dtjokmslolwkv" path="res://Scenes/Entities/Inanimate/circle_normal.tscn" id="4_03ter"]
+[ext_resource type="PackedScene" uid="uid://dlwkpjuk3ms82" path="res://Scenes/Entities/Inanimate/star_normal.tscn" id="5_nelmq"]
 
 [node name="TestingLevel" type="Node2D"]
 
@@ -15,3 +18,12 @@ max_speed = 32.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -57)
 zoom = Vector2(3, 3)
+
+[node name="BoxNormal" parent="." instance=ExtResource("3_jnfkr")]
+position = Vector2(-111, -25)
+
+[node name="CircleNormal" parent="." instance=ExtResource("4_03ter")]
+position = Vector2(-103, -42)
+
+[node name="StarNormal" parent="." instance=ExtResource("5_nelmq")]
+position = Vector2(-93, -28)

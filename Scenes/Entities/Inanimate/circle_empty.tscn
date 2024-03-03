@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkvbvl5fjdidb"]
+
+[ext_resource type="PackedScene" uid="uid://u2016u6ap6pn" path="res://Scenes/Entities/Inanimate/box_empty.tscn" id="1_nvfkl"]
+[ext_resource type="Texture2D" uid="uid://cbhum15a6f0p7" path="res://Sprites/Entities/Inanimate/CE.png" id="2_11267"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7ipp"]
+radius = 8.0
+
+[node name="CircleEmpty" instance=ExtResource("1_nvfkl")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_11267")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_m7ipp")

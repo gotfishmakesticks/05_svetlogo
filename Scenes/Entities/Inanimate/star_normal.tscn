@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlwkpjuk3ms82"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/NormalInanimate.cs" id="1_a2ynm"]
+[ext_resource type="Texture2D" uid="uid://bt1ng0nl8n82a" path="res://Sprites/Entities/Inanimate/SN.png" id="1_hw2pd"]
+
+[node name="StarNormal" type="RigidBody2D"]
+script = ExtResource("1_a2ynm")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_hw2pd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, 3, -2, 8, -2, 4, 2, 7, 8, 0, 4, -7, 8, -4, 2, -8, -2, -3, -2)
