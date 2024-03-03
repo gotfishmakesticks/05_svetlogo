@@ -16,3 +16,12 @@ polygon = PackedVector2Array(-7, 7, 7, 7, 7, -7, -7, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_31xry")
+
+[node name="JumpCacheTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+
+[connection signal="timeout" from="JumpCacheTimer" to="." method="JumpCacheTimeout"]
