@@ -6,10 +6,10 @@ namespace _svetlogo.Entities.Animate
 {
 	public partial class PlayerMovement : CharacterBody2D
 	{
-		const float gravity = 98.1f;
-		const float jumpForce = 75f;
+		const float gravity = 981f;
+		const float jumpForce = 275f;
 
-		public ToolContainer ToolContainer {  get; private set; }
+
 
         [Export] private float max_speed;
 		[Export] private float acceleration_time;
@@ -29,8 +29,6 @@ namespace _svetlogo.Entities.Animate
 			deceleration = max_speed / deceleration_time;
 
 			jump_cache_timer = GetNode<Timer>("JumpCacheTimer");
-
-			ToolContainer = GetNode<ToolContainer>("ToolContainer");
 		}
 
 		public override void _PhysicsProcess(double delta)

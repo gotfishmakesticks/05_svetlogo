@@ -17,6 +17,7 @@ namespace _svetlogo
         public override void _Process(double delta)
         {
             GlobalPosition = GetGlobalMousePosition();
+            
         }
 
         public override void _UnhandledInput(InputEvent @event)
@@ -24,6 +25,7 @@ namespace _svetlogo
             if (@event is InputEventMouseButton button_event)
             {
                 Tool tool = GetParent<ToolContainer>().GetTool();
+                GD.Print(_rayCast.GetCollider());
                 if (button_event.ButtonIndex == MouseButton.Left)
                 {
                     if (button_event.Pressed)

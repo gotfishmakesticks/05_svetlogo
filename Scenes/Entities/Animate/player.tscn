@@ -3,13 +3,15 @@
 [ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerMovement.cs" id="1_vfxkw"]
 [ext_resource type="Script" path="res://Scripts/Tools/ToolContainer.cs" id="2_cdpo8"]
 [ext_resource type="PackedScene" uid="uid://d1bvgnd07usfv" path="res://Scenes/cursor.tscn" id="2_ispvi"]
-[ext_resource type="Resource" uid="uid://vvsfxbvwxcbk" path="res://Resources/Tools/Weld.tres" id="3_7ncg6"]
+[ext_resource type="Resource" uid="uid://cal5yk8hsdj1n" path="res://Resources/Tools/Activator.tres" id="3_0d7n5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31xry"]
-custom_solver_bias = 1.0
-size = Vector2(14, 14)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ll4es"]
+radius = 7.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 28
 script = ExtResource("1_vfxkw")
 max_speed = 24.0
 acceleration_time = 1.5
@@ -20,7 +22,7 @@ mass = 1.0
 polygon = PackedVector2Array(-7, 7, 7, 7, 7, -7, -7, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_31xry")
+shape = SubResource("CapsuleShape2D_ll4es")
 
 [node name="JumpCacheTimer" type="Timer" parent="."]
 wait_time = 0.2
@@ -28,7 +30,7 @@ one_shot = true
 
 [node name="ToolContainer" type="Node" parent="."]
 script = ExtResource("2_cdpo8")
-avaiableTools = [ExtResource("3_7ncg6"), ExtResource("3_7ncg6"), ExtResource("3_7ncg6")]
+avaiableTools = [ExtResource("3_0d7n5")]
 
 [node name="Cursor" parent="ToolContainer" instance=ExtResource("2_ispvi")]
 

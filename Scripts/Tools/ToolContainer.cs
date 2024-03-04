@@ -11,7 +11,6 @@ namespace _svetlogo.Tools
 
         public override void _Process(double delta)
         {
-            GD.Print(avaiableTools.Count);
             if (avaiableTools.Count == 0) return;
             avaiableTools[currentTool].Process(delta);
         }

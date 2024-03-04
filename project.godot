@@ -43,6 +43,15 @@ jump={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Резерв"
+2d_physics/layer_2="Резерв"
+2d_physics/layer_3="Статические объекты"
+2d_physics/layer_4="Неоживлённые объекты"
+2d_physics/layer_5="Оживлённые объекты"
+2d_physics/layer_6="Пьероги"
+
 [physics]
 
 2d/solver/default_constraint_bias=0.0

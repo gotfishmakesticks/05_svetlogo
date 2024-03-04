@@ -21,13 +21,15 @@ namespace _svetlogo.Tools
         {
             if (clickedEntity == null) return;
 
+            GD.Print(clickedEntity);
+
             if (clickedEntity is PhysicsBody2D body)
             {
                 firstBody = body;
 
                 firstJoint = new();
                 firstJoint.GlobalPosition = mousePosition;
-                firstJoint.AddChild(firstBody);
+                firstBody.AddChild(firstJoint);
 
                 firstJoint.NodeA = firstBody.GetPath();
             }
