@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csnkk8mpvrply"]
 
-[ext_resource type="PackedScene" uid="uid://b6v4u8q4f0idh" path="res://Scenes/Entities/Inanimate/box_sticky.tscn" id="1_c7k5e"]
+[ext_resource type="PackedScene" uid="uid://b6v4u8q4f0idh" path="res://Scenes/Entities/Inanimate/Sticky/box_sticky.tscn" id="1_c7k5e"]
 [ext_resource type="Resource" uid="uid://dkbp7enuikf1i" path="res://Resources/Abilities/Circle.tres" id="2_mhkj2"]
 [ext_resource type="Texture2D" uid="uid://bpttuibg8xyjl" path="res://Sprites/Entities/Inanimate/CS.png" id="2_on7fw"]
 

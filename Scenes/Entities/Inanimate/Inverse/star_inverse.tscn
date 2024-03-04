@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://n0inw7a5w7ff"]
 
-[ext_resource type="PackedScene" uid="uid://dlwkpjuk3ms82" path="res://Scenes/Entities/Inanimate/star_normal.tscn" id="1_k6iq0"]
+[ext_resource type="PackedScene" uid="uid://dlwkpjuk3ms82" path="res://Scenes/Entities/Inanimate/Normal/star_normal.tscn" id="1_k6iq0"]
 [ext_resource type="Texture2D" uid="uid://dvh36uw0p32j5" path="res://Sprites/Entities/Inanimate/SI.png" id="3_auj4w"]
 
 [node name="StarInverse" instance=ExtResource("1_k6iq0")]
