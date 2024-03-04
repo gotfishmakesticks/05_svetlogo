@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwaafq7l6kagn" path="res://Sprites/Entities/Inanimate/BI.png" id="3_adhs0"]
 
 [node name="BoxInverse" instance=ExtResource("1_cbn6g")]
+massInverted = true
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_adhs0")

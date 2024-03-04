@@ -10,8 +10,8 @@ namespace _svetlogo.Entities
         [Export] private Array<Ability> abilities = new Array<Ability>();
         private bool overloaded = false;
 
-        [Export]public bool modifyMass = true;
-        public bool massInverted = false;
+        [Export] public bool modifyMass = true;
+        [Export] public bool massInverted = false;
 
         public override void _Ready()
         {
