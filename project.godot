@@ -22,6 +22,18 @@ ToolContainer="*res://Scripts/Tools/ToolContainer.cs"
 
 project/assembly_name="05_svetlogo"
 
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "orange",
+"res://Scripts/": "blue",
+"res://Scripts/Abilities/": "red",
+"res://Scripts/Entities/": "orange",
+"res://Scripts/Systems/": "blue",
+"res://Scripts/Tools/": "blue",
+"res://Scripts/UI/": "green"
+}
+
 [input]
 
 move_left={

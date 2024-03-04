@@ -6,7 +6,4 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>_svetlogo</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\Entities\Dynamic\" />
-  </ItemGroup>
 </Project>

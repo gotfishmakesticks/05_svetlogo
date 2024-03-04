@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CircleAbility" load_steps=2 format=3 uid="uid://dkbp7enuikf1i"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/Inanimate/CircleAbility.cs" id="1_8x6om"]
+
+[resource]
+script = ExtResource("1_8x6om")
+_torque = 1000.0

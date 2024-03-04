@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlwkpjuk3ms82"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/Circle.cs" id="1_a2ynm"]
+[ext_resource type="Script" path="res://Scripts/Entities/Entity.cs" id="1_a2ynm"]
 [ext_resource type="Texture2D" uid="uid://bt1ng0nl8n82a" path="res://Sprites/Entities/Inanimate/SN.png" id="1_hw2pd"]
 
 [node name="StarNormal" type="RigidBody2D"]

@@ -9,7 +9,7 @@ namespace _svetlogo.Systems
         public static Level instance;
 
         public Overload Overload { get; private set; }
-        public List<IEntity> Entities { get; private set; } = new List<IEntity>();
+        public List<Entity> Entities { get; private set; } = new List<Entity>();
 
         public override void _EnterTree()
         {

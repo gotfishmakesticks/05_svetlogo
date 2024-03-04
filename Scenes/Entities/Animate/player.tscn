@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcg627wdcgwm"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerMovement.cs" id="1_vfxkw"]
+[ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerMovement.cs" id="1_vs16y"]
 [ext_resource type="Script" path="res://Scripts/Tools/ToolContainer.cs" id="2_cdpo8"]
 [ext_resource type="PackedScene" uid="uid://d1bvgnd07usfv" path="res://Scenes/cursor.tscn" id="2_ispvi"]
-[ext_resource type="Resource" uid="uid://cal5yk8hsdj1n" path="res://Resources/Tools/Activator.tres" id="3_0d7n5"]
+[ext_resource type="Resource" uid="uid://cal5yk8hsdj1n" path="res://Resources/Tools/Activator.tres" id="3_n77yx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ll4es"]
 radius = 7.0
@@ -12,7 +12,7 @@ height = 14.0
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 28
-script = ExtResource("1_vfxkw")
+script = ExtResource("1_vs16y")
 max_speed = 24.0
 acceleration_time = 1.5
 deceleration_time = 0.3
@@ -30,7 +30,7 @@ one_shot = true
 
 [node name="ToolContainer" type="Node" parent="."]
 script = ExtResource("2_cdpo8")
-avaiableTools = [ExtResource("3_0d7n5")]
+avaiableTools = [ExtResource("3_n77yx")]
 
 [node name="Cursor" parent="ToolContainer" instance=ExtResource("2_ispvi")]
 

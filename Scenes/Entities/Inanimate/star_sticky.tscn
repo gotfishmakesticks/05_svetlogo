@@ -1,11 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://du72tc1k2goc3"]
+[gd_scene load_steps=3 format=3 uid="uid://du72tc1k2goc3"]
 
 [ext_resource type="PackedScene" uid="uid://dlwkpjuk3ms82" path="res://Scenes/Entities/Inanimate/star_normal.tscn" id="1_fkk4m"]
-[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/Circle.cs" id="2_m08ok"]
 [ext_resource type="Texture2D" uid="uid://7ge8xcisxmpo" path="res://Sprites/Entities/Inanimate/SS.png" id="3_acog7"]
 
 [node name="StarSticky" instance=ExtResource("1_fkk4m")]
-script = ExtResource("2_m08ok")
+position = Vector2(-2, 0)
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_acog7")

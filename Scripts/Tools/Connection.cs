@@ -7,7 +7,7 @@ namespace _svetlogo.Tools
     [GlobalClass]
     public partial class Connection : Tool, IBeginDragLMB, IEndDragLMB
     {
-        private PhysicsBody2D firstBody;
+        private Entity firstBody;
         private PinJoint2D firstJoint;
 
         public override void OnDeselect()
@@ -17,32 +17,33 @@ namespace _svetlogo.Tools
         public override void OnSelect()
         {
         }
-        public void BeginDragLMB(Vector2 mousePosition, IEntity clickedEntity)
+        public void BeginDragLMB(Vector2 mousePosition, Entity clickedEntity)
         {
             if (clickedEntity == null) return;
 
-            GD.Print(clickedEntity);
 
-            if (clickedEntity is PhysicsBody2D body)
-            {
-                firstBody = body;
+            firstBody = clickedEntity;
 
-                firstJoint = new();
-                firstJoint.GlobalPosition = mousePosition;
-                firstBody.AddChild(firstJoint);
+            firstJoint = new();
+            firstJoint.GlobalPosition = mousePosition;
+            firstBody.AddChild(firstJoint);
 
-                firstJoint.NodeA = firstBody.GetPath();
-            }
+            firstJoint.NodeA = firstBody.GetPath();
         }
 
         public override void Process(double delta)
         {
         }
-        public void EndDragLMB(Vector2 mousePosition, IEntity clickedEntity)
+        public void EndDragLMB(Vector2 mousePosition, Entity clickedEntity)
         {
-            if (clickedEntity == null && firstBody != null)
+            if (clickedEntity == null || firstBody == null)
             {
-                firstJoint.QueueFree();
+                if (firstBody != null)
+                {
+                    firstJoint.QueueFree();
+                }
+                
+
                 return;
             }
 

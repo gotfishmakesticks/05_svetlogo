@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_svetlogo", "05_svetlogo.csproj", "{A1C746CB-552B-4C79-A9DF-C396F62F65C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_svetlogo", "05_svetlogo.csproj", "{594A46FA-61F5-492D-B077-183E161A0B0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1C746CB-552B-4C79-A9DF-C396F62F65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1C746CB-552B-4C79-A9DF-C396F62F65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1C746CB-552B-4C79-A9DF-C396F62F65C3}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{A1C746CB-552B-4C79-A9DF-C396F62F65C3}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{A1C746CB-552B-4C79-A9DF-C396F62F65C3}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{A1C746CB-552B-4C79-A9DF-C396F62F65C3}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{594A46FA-61F5-492D-B077-183E161A0B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594A46FA-61F5-492D-B077-183E161A0B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594A46FA-61F5-492D-B077-183E161A0B0B}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{594A46FA-61F5-492D-B077-183E161A0B0B}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{594A46FA-61F5-492D-B077-183E161A0B0B}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{594A46FA-61F5-492D-B077-183E161A0B0B}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

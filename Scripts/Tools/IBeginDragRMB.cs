@@ -5,6 +5,6 @@ namespace _svetlogo.Tools
 {
     public interface IBeginDragRMB
     {
-        void BeginDragRMB(Vector2 mousePosition, IEntity clickedEntity);
+        void BeginDragRMB(Vector2 mousePosition, Entity clickedEntity);
     }
 }

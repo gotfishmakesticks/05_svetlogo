@@ -1,5 +1,4 @@
 using _svetlogo.Entities;
-using _svetlogo.Entities.Animate;
 using _svetlogo.Tools;
 using Godot;
 
@@ -25,21 +24,20 @@ namespace _svetlogo
             if (@event is InputEventMouseButton button_event)
             {
                 Tool tool = GetParent<ToolContainer>().GetTool();
-                GD.Print(_rayCast.GetCollider());
                 if (button_event.ButtonIndex == MouseButton.Left)
                 {
                     if (button_event.Pressed)
                     {
                         if (tool is IBeginDragLMB dragLMB)
                         {
-                            dragLMB.BeginDragLMB(GlobalPosition, _rayCast.GetCollider() as IEntity);
+                            dragLMB.BeginDragLMB(GlobalPosition, _rayCast.GetCollider() as Entity);
                         }
                     }
                     else
                     {
                         if (tool is IEndDragLMB dragLMB)
                         {
-                            dragLMB.EndDragLMB(GlobalPosition, _rayCast.GetCollider() as IEntity);
+                            dragLMB.EndDragLMB(GlobalPosition, _rayCast.GetCollider() as Entity);
                         }
                     }
                 }
@@ -49,14 +47,14 @@ namespace _svetlogo
                     {
                         if (tool is IBeginDragRMB dragRMB)
                         {
-                            dragRMB.BeginDragRMB(GlobalPosition, _rayCast.GetCollider() as IEntity);
+                            dragRMB.BeginDragRMB(GlobalPosition, _rayCast.GetCollider() as Entity);
                         }
                     }
                     else
                     {
                         if (tool is IEndDragRMB dragRMB)
                         {
-                            dragRMB.EndDragRMB(GlobalPosition, _rayCast.GetCollider() as IEntity);
+                            dragRMB.EndDragRMB(GlobalPosition, _rayCast.GetCollider() as Entity);
                         }
                     }
                 }

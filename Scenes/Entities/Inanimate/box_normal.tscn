@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://w0qk4bmodkwg"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/StandardEntity.cs" id="1_xqf43"]
+[ext_resource type="Script" path="res://Scripts/Entities/Entity.cs" id="1_2iqbd"]
 [ext_resource type="Texture2D" uid="uid://c7ydfsmjn2v1" path="res://Sprites/Entities/Inanimate/BN.png" id="2_5llng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxj34"]
@@ -9,7 +9,7 @@ size = Vector2(16, 16)
 [node name="BoxNormal" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 28
-script = ExtResource("1_xqf43")
+script = ExtResource("1_2iqbd")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_5llng")

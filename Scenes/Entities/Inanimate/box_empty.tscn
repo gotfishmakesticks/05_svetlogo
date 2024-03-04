@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/box_normal.tscn" id="1_830sg"]
 [ext_resource type="Texture2D" uid="uid://gupp2y0r2pcl" path="res://Sprites/Entities/Inanimate/BE.png" id="2_h3x3d"]
-[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/StandardEntity.cs" id="2_k5r0j"]
+[ext_resource type="Script" path="res://Scripts/Entities/Entity.cs" id="2_vlec1"]
 
 [node name="BoxEmpty" instance=ExtResource("1_830sg")]
-script = ExtResource("2_k5r0j")
+script = ExtResource("2_vlec1")
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_h3x3d")

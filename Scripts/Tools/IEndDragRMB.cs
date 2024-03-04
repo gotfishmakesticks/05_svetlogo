@@ -5,6 +5,6 @@ namespace _svetlogo.Tools
 {
     public interface IEndDragRMB
     {
-        void EndDragRMB(Vector2 mousePosition, IEntity clickedEntity);
+        void EndDragRMB(Vector2 mousePosition, Entity clickedEntity);
     }
 }

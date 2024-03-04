@@ -1,5 +1,4 @@
 using Godot;
-using Godot.Collections;
 using _svetlogo.Entities;
 
 namespace _svetlogo.Systems
@@ -18,14 +17,14 @@ namespace _svetlogo.Systems
 			{
 				overload = true;
 
-				foreach (IEntity entity in Level.instance.Entities)
+				foreach (Entity entity in Level.instance.Entities)
 				{
 					entity.StartOverload();
 				}
 			}
 			else if (overload == true)
 			{
-                foreach (IEntity entity in Level.instance.Entities)
+                foreach (Entity entity in Level.instance.Entities)
                 {
                     entity.StopOverload();
                 }

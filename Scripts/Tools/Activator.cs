@@ -4,14 +4,21 @@ using Godot;
 namespace _svetlogo.Tools
 {
     [GlobalClass]
-    public partial class Activator : Tool, IEndDragLMB
+    public partial class Activator : Tool, IEndDragLMB, IEndDragRMB
     {
-        public void EndDragLMB(Vector2 mousePosition, IEntity clickedEntity)
+        public void EndDragLMB(Vector2 mousePosition, Entity clickedEntity)
         {
             if (clickedEntity == null) return;
 
             clickedEntity.StopOverload();
             clickedEntity.StartOverload();
+        }
+
+        public void EndDragRMB(Vector2 mousePosition, Entity clickedEntity)
+        {
+            if (clickedEntity == null) return;
+
+            clickedEntity.StopOverload();
         }
 
         public override void OnDeselect()
