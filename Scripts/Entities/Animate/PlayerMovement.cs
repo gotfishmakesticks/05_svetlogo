@@ -9,7 +9,7 @@ namespace _svetlogo.Entities.Animate
 		const float gravity = 981f;
 		const float jumpForce = 325f;
 
-
+		public PlayerData PlayerData { get; private set; }
 
         [Export] private float max_speed;
 		[Export] private float acceleration_time;
@@ -29,6 +29,7 @@ namespace _svetlogo.Entities.Animate
 			deceleration = max_speed / deceleration_time;
 
 			jump_cache_timer = GetNode<Timer>("JumpCacheTimer");
+			PlayerData = GetNode<PlayerData>("PlayerData");
 		}
 
 		public override void _PhysicsProcess(double delta)

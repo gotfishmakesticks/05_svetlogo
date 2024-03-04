@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcg627wdcgwm"]
+[gd_scene load_steps=7 format=3 uid="uid://dcg627wdcgwm"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerMovement.cs" id="1_vs16y"]
 [ext_resource type="Script" path="res://Scripts/Tools/ToolContainer.cs" id="2_cdpo8"]
 [ext_resource type="PackedScene" uid="uid://d1bvgnd07usfv" path="res://Scenes/cursor.tscn" id="2_ispvi"]
+[ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerData.cs" id="2_x1cqj"]
 [ext_resource type="Resource" uid="uid://cal5yk8hsdj1n" path="res://Resources/Tools/Activator.tres" id="3_n77yx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ll4es"]
@@ -17,6 +18,10 @@ max_speed = 24.0
 acceleration_time = 1.5
 deceleration_time = 0.3
 mass = 1.0
+
+[node name="PlayerData" type="Node" parent="."]
+script = ExtResource("2_x1cqj")
+HP = 10.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-7, 7, 7, 7, 7, -7, -7, -7)
