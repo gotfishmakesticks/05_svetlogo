@@ -7,7 +7,7 @@ namespace _svetlogo.Entities.Animate
 	public partial class PlayerMovement : CharacterBody2D
 	{
 		const float gravity = 981f;
-		const float jumpForce = 275f;
+		const float jumpForce = 325f;
 
 
 
