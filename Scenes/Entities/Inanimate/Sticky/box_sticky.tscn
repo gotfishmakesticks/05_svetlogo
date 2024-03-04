@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6v4u8q4f0idh"]
+[gd_scene load_steps=6 format=3 uid="uid://b6v4u8q4f0idh"]
 
 [ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/Normal/box_normal.tscn" id="1_ywi7x"]
+[ext_resource type="Resource" uid="uid://da3mefjrub11h" path="res://Resources/Abilities/Sticky.tres" id="2_i2b4j"]
 [ext_resource type="Texture2D" uid="uid://dsf6bnfp5k5g4" path="res://Sprites/Entities/Inanimate/BS.png" id="3_0dycm"]
+[ext_resource type="Script" path="res://Scripts/Entities/Inanimate/StickArea.cs" id="3_kwqnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m512f"]
+size = Vector2(18, 18)
 
 [node name="BoxSticky" instance=ExtResource("1_ywi7x")]
+abilities = [ExtResource("2_i2b4j")]
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_0dycm")
+
+[node name="StickArea" type="Area2D" parent="." index="2"]
+script = ExtResource("3_kwqnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickArea" index="0"]
+shape = SubResource("RectangleShape2D_m512f")

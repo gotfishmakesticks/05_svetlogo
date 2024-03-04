@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://csnkk8mpvrply"]
+[gd_scene load_steps=6 format=3 uid="uid://csnkk8mpvrply"]
 
 [ext_resource type="PackedScene" uid="uid://b6v4u8q4f0idh" path="res://Scenes/Entities/Inanimate/Sticky/box_sticky.tscn" id="1_c7k5e"]
 [ext_resource type="Resource" uid="uid://dkbp7enuikf1i" path="res://Resources/Abilities/Circle.tres" id="2_mhkj2"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjgr5"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ourkn"]
+radius = 9.0
 
 [node name="CircleSticky" instance=ExtResource("1_c7k5e")]
 abilities = [ExtResource("2_mhkj2")]
@@ -15,3 +18,6 @@ texture = ExtResource("2_on7fw")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_rjgr5")
+
+[node name="CollisionShape2D" parent="StickArea" index="0"]
+shape = SubResource("CircleShape2D_ourkn")

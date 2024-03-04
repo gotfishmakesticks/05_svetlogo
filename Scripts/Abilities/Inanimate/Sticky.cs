@@ -4,6 +4,7 @@ using System;
 
 namespace _svetlogo.Abilities
 {
+    [GlobalClass]
     public partial class Sticky : Ability
     {
         public override void OnReady(Entity invoker)
@@ -16,10 +17,18 @@ namespace _svetlogo.Abilities
 
         public override void StartAbility(Entity invoker)
         {
+            StickArea stickArea = invoker.GetNode<StickArea>("StickArea");
+
+            stickArea.can_stick = true;
+            stickArea.Stick();
         }
 
         public override void StopAbility(Entity invoker)
         {
+            StickArea stickArea = invoker.GetNode<StickArea>("StickArea");
+
+            stickArea.can_stick = false;
+            stickArea.Unstick();
         }
     }
 }
