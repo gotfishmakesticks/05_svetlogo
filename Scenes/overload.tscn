@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Scripts/Systems/Overflow.cs" id="1_66j7u"]
 
-[node name="Overload" type="Node"]
+[node name="Overflow" type="Node"]
 script = ExtResource("1_66j7u")
