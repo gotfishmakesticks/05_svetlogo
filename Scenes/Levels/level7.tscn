@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dugrv0wb8d68g" path="res://Scenes/Entities/Static/weighted_button.tscn" id="10_iddkc"]
 [ext_resource type="PackedScene" uid="uid://bv1gifwts1282" path="res://Scenes/veinsback.tscn" id="11_rq181"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Overflow")]
 script = ExtResource("1_5v0et")
+Overflow = NodePath("Overload")
 
 [node name="MusicMixer" parent="." instance=ExtResource("2_fg2b3")]
 normalMusic = ExtResource("3_uk4c3")

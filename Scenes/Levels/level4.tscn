@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dcg627wdcgwm" path="res://Scenes/Entities/Animate/player.tscn" id="4_xp0f7"]
 [ext_resource type="PackedScene" uid="uid://cj2qdfn5xvftr" path="res://Scenes/pikesback.tscn" id="5_0107s"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Overflow")]
 script = ExtResource("1_bjjtp")
+Overflow = NodePath("Overload")
 
 [node name="MusicMixer" parent="." instance=ExtResource("2_vqnak")]
 
