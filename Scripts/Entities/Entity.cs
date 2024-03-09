@@ -14,7 +14,7 @@ namespace _svetlogo.Entities
 
         [Export] public int health = 1;
         [Signal]
-        delegate void DeathSignalEventHandler();
+        public delegate void DeathSignalEventHandler();
 
         public override void _Ready()
         {
