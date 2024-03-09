@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1amles0cx0eg"]
+[gd_scene load_steps=7 format=3 uid="uid://bfmn1bogxuk0h"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Level.cs" id="1_43fjx"]
+[ext_resource type="PackedScene" uid="uid://ieirkrc5ufg3" path="res://Scenes/music_mixer.tscn" id="2_35fkc"]
 [ext_resource type="Script" path="res://Scripts/Systems/Overload.cs" id="2_q2n8i"]
 [ext_resource type="PackedScene" uid="uid://c0jjjo3aiwuk0" path="res://Scenes/Tilemaps/main.tscn" id="3_7ef7n"]
 [ext_resource type="PackedScene" uid="uid://dcg627wdcgwm" path="res://Scenes/Entities/Animate/player.tscn" id="4_pe2wg"]
+[ext_resource type="PackedScene" uid="uid://cj2qdfn5xvftr" path="res://Scenes/pikesback.tscn" id="5_2henn"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_43fjx")
+
+[node name="MusicMixer" parent="." instance=ExtResource("2_35fkc")]
 
 [node name="Overload" type="Node" parent="."]
 script = ExtResource("2_q2n8i")
@@ -16,10 +20,12 @@ layer_0/tile_data = PackedInt32Array(131071, 196608, 3, 131070, 196608, 3, 13106
 
 [node name="Player" parent="." instance=ExtResource("4_pe2wg")]
 position = Vector2(-56, 7)
+mass = 20.0
 max_speed = 64.0
 deceleration_time = 0.2
-mass = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-11, -50)
 zoom = Vector2(3, 3)
+
+[node name="Pikesback" parent="." instance=ExtResource("5_2henn")]
