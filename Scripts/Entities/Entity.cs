@@ -39,6 +39,7 @@ namespace _svetlogo.Entities
                 StopOverload();
             }
             Level.instance.Entities.Remove(this);
+            EmitSignal(SignalName.DeathSignal);
         }
         public void StartOverload()
         {
