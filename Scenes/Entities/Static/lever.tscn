@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cire2svgwho68"]
+
+[ext_resource type="PackedScene" uid="uid://c47yrgfdmmkho" path="res://Scenes/Entities/Static/button.tscn" id="1_tie2x"]
+[ext_resource type="Texture2D" uid="uid://bopk62oaaexyf" path="res://Sprites/Entities/Inanimate/lever_on.png" id="2_d8ry6"]
+[ext_resource type="Script" path="res://Scripts/Entities/Static/PhysicalLever.cs" id="2_nmi3v"]
+[ext_resource type="Texture2D" uid="uid://nhsnw53qse33" path="res://Sprites/Entities/Inanimate/lever_off.png" id="3_p747f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04d3w"]
+size = Vector2(13, 8)
+
+[node name="Lever" instance=ExtResource("1_tie2x")]
+script = ExtResource("2_nmi3v")
+activatedTexture = ExtResource("2_d8ry6")
+deactivatedTexture = ExtResource("3_p747f")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_d8ry6")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, -4)
+shape = SubResource("RectangleShape2D_04d3w")

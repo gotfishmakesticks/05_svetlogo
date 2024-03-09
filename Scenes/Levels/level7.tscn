@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blbu41oe37cvu"]
+[gd_scene load_steps=13 format=3 uid="uid://blbu41oe37cvu"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Level.cs" id="1_5v0et"]
 [ext_resource type="PackedScene" uid="uid://ieirkrc5ufg3" path="res://Scenes/music_mixer.tscn" id="2_fg2b3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c47yrgfdmmkho" path="res://Scenes/Entities/Static/button.tscn" id="9_txn6v"]
 [ext_resource type="PackedScene" uid="uid://dugrv0wb8d68g" path="res://Scenes/Entities/Static/weighted_button.tscn" id="10_iddkc"]
 [ext_resource type="PackedScene" uid="uid://bv1gifwts1282" path="res://Scenes/veinsback.tscn" id="11_rq181"]
+[ext_resource type="PackedScene" uid="uid://cire2svgwho68" path="res://Scenes/Entities/Static/lever.tscn" id="12_3qfi2"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Overflow")]
 script = ExtResource("1_5v0et")
@@ -46,6 +47,9 @@ position = Vector2(85, 16)
 position = Vector2(44, 16)
 
 [node name="Veinsback" parent="." instance=ExtResource("11_rq181")]
+
+[node name="Lever" parent="." instance=ExtResource("12_3qfi2")]
+position = Vector2(-28, 17)
 
 [connection signal="OnOverflow" from="Overload" to="MusicMixer" method="ToggleOverflow" binds= [true]]
 [connection signal="OnOverflowEnd" from="Overload" to="MusicMixer" method="ToggleOverflow" binds= [false]]
