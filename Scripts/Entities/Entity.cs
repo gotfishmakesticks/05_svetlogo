@@ -12,6 +12,10 @@ namespace _svetlogo.Entities
 
         [Export] public bool massInverted = false;
 
+        [Export] public int health = 1;
+        [Signal]
+        delegate void DeathSignalEventHandler();
+
         public override void _Ready()
         {
             Level.instance.Entities.Add(this);
