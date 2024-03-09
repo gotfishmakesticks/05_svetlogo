@@ -7,23 +7,25 @@ namespace _svetlogo
     public partial class Cursor : Node2D
     {
         private RayCast2D _rayCast;
+        private ToolContainer _toolContainer;
 
         public override void _Ready()
         {
             _rayCast = GetNode<RayCast2D>("RayCast2D");
+            _toolContainer = GetParent<ToolContainer>();
         }
 
         public override void _Process(double delta)
         {
             GlobalPosition = GetGlobalMousePosition();
-            
+            _toolContainer.GetTool().Process(delta);
         }
 
         public override void _UnhandledInput(InputEvent @event)
         {
             if (@event is InputEventMouseButton button_event)
             {
-                Tool tool = GetParent<ToolContainer>().GetTool();
+                Tool tool = _toolContainer.GetTool();
                 if (button_event.ButtonIndex == MouseButton.Left)
                 {
                     if (button_event.Pressed)

@@ -8,21 +8,16 @@ namespace _svetlogo.Tools
     public partial class MassManipulator : Tool, IBeginDragLMB, IBeginDragRMB, IEndDragLMB, IEndDragRMB
     {
         [Export] private float minMass;
-        [Export] private float startSand;
+        [Export] private float sand;
         [Export] private float manipulationSpeed;
         private WorkMode _workMode;
-        private float _sand;
         private Entity _entityToManipulate;
-
-        public MassManipulator()
-        {
-            _sand = startSand;
-        }
 
         public void BeginDragLMB(Vector2 mousePosition, Entity clickedEntity)
         {
             if (clickedEntity == null) return;
-            _workMode = WorkMode.IN;
+            _workMode = WorkMode.OUT;
+
 
             _entityToManipulate = clickedEntity;
         }
@@ -30,7 +25,7 @@ namespace _svetlogo.Tools
         public void BeginDragRMB(Vector2 mousePosition, Entity clickedEntity)
         {
             if (clickedEntity == null) return;
-            _workMode = WorkMode.OUT;
+            _workMode = WorkMode.IN;
 
             _entityToManipulate = clickedEntity;
         }
@@ -54,17 +49,17 @@ namespace _svetlogo.Tools
         {
             if (_entityToManipulate == null) return;
 
-            if (_entityToManipulate.Mass <= minMass || _sand <= 0 || _sand - manipulationSpeed < 0 || _entityToManipulate.Mass - manipulationSpeed < 0) return;
+            if (_entityToManipulate.Mass <= minMass || sand <= 0 || sand - manipulationSpeed < 0 || _entityToManipulate.Mass - manipulationSpeed < 0) return;
 
             switch (_workMode)
             {
                 case WorkMode.IN:
-                    _entityToManipulate.AddMass(-manipulationSpeed);
-                    _sand += manipulationSpeed;
+                    _entityToManipulate.AddMass(-manipulationSpeed * (float)delta);
+                    sand += manipulationSpeed * (float)delta;
                     break;
                 case WorkMode.OUT:
-                    _sand -= manipulationSpeed;
-                    _entityToManipulate.AddMass(manipulationSpeed);
+                    sand -= manipulationSpeed * (float)delta;
+                    _entityToManipulate.AddMass(manipulationSpeed * (float)delta);
                     break;
             }
         }

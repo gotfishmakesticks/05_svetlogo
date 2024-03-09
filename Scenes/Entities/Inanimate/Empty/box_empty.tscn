@@ -14,7 +14,7 @@ texture = ExtResource("2_h3x3d")
 
 [node name="Killbox" type="Area2D" parent="." index="2"]
 collision_layer = 0
-collision_mask = 24
+collision_mask = 16
 script = ExtResource("3_ut6xj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox" index="0"]

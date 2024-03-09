@@ -4,9 +4,8 @@ using System;
 
 namespace _svetlogo.Entities.Animate
 {
-	public partial class PlayerMovement : CharacterBody2D
+	public partial class PlayerMovement : RigidBody2D
 	{
-		const float gravity = 981f;
 		const float jumpForce = 325f;
 
 		public PlayerData PlayerData { get; private set; }
@@ -14,7 +13,6 @@ namespace _svetlogo.Entities.Animate
         [Export] private float max_speed;
 		[Export] private float acceleration_time;
 		[Export] private float deceleration_time;
-		[Export] private float mass;
 
 		private bool jump_cached;
 		private float acceleration;
@@ -22,6 +20,7 @@ namespace _svetlogo.Entities.Animate
 		private bool floor_cached;
 
 		private Timer jump_cache_timer;
+		private ShapeCast2D floor_detector;
 
 		public override void _Ready()
 		{
@@ -29,16 +28,24 @@ namespace _svetlogo.Entities.Animate
 			deceleration = max_speed / deceleration_time;
 
 			jump_cache_timer = GetNode<Timer>("JumpCacheTimer");
+			floor_detector = GetNode<ShapeCast2D>("FloorDetector");
 			PlayerData = GetNode<PlayerData>("PlayerData");
 		}
 
-		public override void _PhysicsProcess(double delta)
+        public override void _IntegrateForces(PhysicsDirectBodyState2D state)
 		{
-			Vector2 velocity = Velocity;
+
+			Vector2 velocity = LinearVelocity;
 
             float res_acceleration = 0.0f;
 
-			if (IsOnFloor() != floor_cached)
+			if (Input.IsActionJustPressed("jump") && jump_cached)
+			{
+				ApplyCentralImpulse(Vector2.Up*jumpForce*Mass);
+				jump_cached = false;	
+			}
+
+			if (floor_detector.IsColliding() != floor_cached)
 			{
 				if (floor_cached)
 				{
@@ -51,9 +58,9 @@ namespace _svetlogo.Entities.Animate
 				}
 			}
 
-            floor_cached = IsOnFloor();
+            floor_cached = floor_detector.IsColliding();
 
-            if (IsOnFloor() || IsOnCeiling())
+            if (floor_cached)
 			{
 				res_acceleration -= deceleration * velocity.X/max_speed;
 			}
@@ -69,30 +76,8 @@ namespace _svetlogo.Entities.Animate
                 res_acceleration = 0;
 			}
 
-			velocity.X += res_acceleration * (float)delta;
-
-			velocity.Y += gravity * (float)delta;
-			if (Input.IsActionJustPressed("jump") && jump_cached)
-			{
-				velocity.Y = -jumpForce;
-			}
-
-			Velocity = velocity;
-			MoveAndSlide();
-
-			for (int i = 0; i < GetSlideCollisionCount(); i++)
-			{
-				var collision = GetSlideCollision(i);
-				if (collision != null)
-				{
-					var collider = collision.GetCollider();
-					if (collider is RigidBody2D rigid)
-					{
-						rigid.ApplyImpulse(-collision.GetNormal() * mass,rigid.ToLocal(collision.GetPosition()));
-					}
-				}
-			}
-        }
+			ConstantForce = Vector2.Right * Mass * res_acceleration;
+		}
 
 		public void JumpCacheTimeout()
 		{

@@ -10,7 +10,6 @@ namespace _svetlogo.Entities
         [Export] private Array<Ability> abilities = new Array<Ability>();
         private bool overloaded = false;
 
-        [Export] public bool modifyMass = true;
         [Export] public bool massInverted = false;
 
         public override void _Ready()
@@ -20,9 +19,21 @@ namespace _svetlogo.Entities
             {
                 ability.OnReady(this);
             }
+            if (massInverted)
+                Level.instance.Overload.AddMass(-Mass);
+            else
+                Level.instance.Overload.AddMass(Mass);
         }
         public override void _ExitTree()
         {
+            if (massInverted)
+                Level.instance.Overload.AddMass(Mass);
+            else
+                Level.instance.Overload.AddMass(-Mass);
+            if (overloaded)
+            {
+                StopOverload();
+            }
             Level.instance.Entities.Remove(this);
         }
         public void StartOverload()
@@ -62,10 +73,7 @@ namespace _svetlogo.Entities
             float difference = to - Mass;
             if (massInverted)
                 difference = -difference;
-            if (modifyMass)
-            {
-                Level.instance.Overload.AddMass(difference);
-            }
+            Level.instance.Overload.AddMass(difference);
 
             Mass = to;
         }

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MassManipulator" load_steps=2 format=3 uid="uid://bjnlarppki0hv"]
+
+[ext_resource type="Script" path="res://Scripts/Tools/MassManipulator.cs" id="1_dwhkp"]
+
+[resource]
+script = ExtResource("1_dwhkp")
+minMass = 0.5
+sand = 100.0
+manipulationSpeed = 0.25

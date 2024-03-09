@@ -1,26 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcg627wdcgwm"]
+[gd_scene load_steps=8 format=3 uid="uid://dcg627wdcgwm"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerMovement.cs" id="1_vs16y"]
+[ext_resource type="PhysicsMaterial" uid="uid://b0a44pgnslo40" path="res://Resources/PlayerMaterial.tres" id="1_f1ff4"]
+[ext_resource type="Script" path="res://Scripts/Entities/Animate/Player/PlayerMovement.cs" id="1_h8fj1"]
+[ext_resource type="Script" path="res://Scripts/Entities/Animate/Player/PlayerData.cs" id="2_474es"]
 [ext_resource type="Script" path="res://Scripts/Tools/ToolContainer.cs" id="2_cdpo8"]
 [ext_resource type="PackedScene" uid="uid://d1bvgnd07usfv" path="res://Scenes/cursor.tscn" id="2_ispvi"]
-[ext_resource type="Script" path="res://Scripts/Entities/Animate/PlayerData.cs" id="2_x1cqj"]
-[ext_resource type="Resource" uid="uid://cal5yk8hsdj1n" path="res://Resources/Tools/Activator.tres" id="3_n77yx"]
+[ext_resource type="Resource" uid="uid://bjnlarppki0hv" path="res://Resources/Tools/MassManipulator.tres" id="4_dha3c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ll4es"]
 radius = 7.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="RigidBody2D"]
 collision_layer = 16
 collision_mask = 28
-script = ExtResource("1_vs16y")
+mass = 10.0
+physics_material_override = ExtResource("1_f1ff4")
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_h8fj1")
 max_speed = 24.0
 acceleration_time = 1.5
 deceleration_time = 0.3
-mass = 1.0
+
+[node name="FloorDetector" type="ShapeCast2D" parent="."]
+shape = SubResource("CapsuleShape2D_ll4es")
+target_position = Vector2(0, 5)
+max_results = 1
+collision_mask = 28
 
 [node name="PlayerData" type="Node" parent="."]
-script = ExtResource("2_x1cqj")
+script = ExtResource("2_474es")
 HP = 10.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -35,8 +45,11 @@ one_shot = true
 
 [node name="ToolContainer" type="Node" parent="."]
 script = ExtResource("2_cdpo8")
-avaiableTools = [ExtResource("3_n77yx")]
+avaiableTools = [ExtResource("4_dha3c")]
 
 [node name="Cursor" parent="ToolContainer" instance=ExtResource("2_ispvi")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [connection signal="timeout" from="JumpCacheTimer" to="." method="JumpCacheTimeout"]
