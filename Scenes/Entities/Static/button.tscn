@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c47yrgfdmmkho"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Static/Button.cs" id="1_shije"]
+[ext_resource type="Script" path="res://Scripts/Entities/Static/PhysicalButton.cs" id="1_shije"]
 [ext_resource type="Texture2D" uid="uid://dpqxn3aqlfpth" path="res://Sprites/Entities/Inanimate/button_on.png" id="1_u8d75"]
 [ext_resource type="Texture2D" uid="uid://bmv1bxw1awdgc" path="res://Sprites/Entities/Inanimate/button_off.png" id="3_jkcnh"]
 

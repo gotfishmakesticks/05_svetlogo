@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5y8r72cy8l3b"]
 
-[ext_resource type="Script" path="res://Scripts/Systems/Overload.cs" id="1_66j7u"]
+[ext_resource type="Script" path="res://Scripts/Systems/Overflow.cs" id="1_66j7u"]
 
 [node name="Overload" type="Node"]
 script = ExtResource("1_66j7u")
