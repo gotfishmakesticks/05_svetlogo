@@ -24,16 +24,16 @@ namespace _svetlogo.Entities
                 ability.OnReady(this);
             }
             if (massInverted)
-                Level.instance.Overload.AddMass(-Mass);
+                Level.instance.Overflow.AddMass(-Mass);
             else
-                Level.instance.Overload.AddMass(Mass);
+                Level.instance.Overflow.AddMass(Mass);
         }
         public override void _ExitTree()
         {
             if (massInverted)
-                Level.instance.Overload.AddMass(Mass);
+                Level.instance.Overflow.AddMass(Mass);
             else
-                Level.instance.Overload.AddMass(-Mass);
+                Level.instance.Overflow.AddMass(-Mass);
             if (overloaded)
             {
                 StopOverload();
@@ -78,7 +78,7 @@ namespace _svetlogo.Entities
             float difference = to - Mass;
             if (massInverted)
                 difference = -difference;
-            Level.instance.Overload.AddMass(difference);
+            Level.instance.Overflow.AddMass(difference);
 
             Mass = to;
         }

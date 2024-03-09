@@ -1,12 +1,13 @@
 using Godot;
 
 namespace _svetlogo.Entities.Static;
-public partial class Button : Area2D
+public partial class PhysicalButton : Area2D
 {
 	[Export] private Texture2D activatedTexture;
 	[Export] private Texture2D deactivatedTexture;
 	[Export] private Sprite2D sprite;
 
+	public bool Activated => bodyCount != 0;
 	private int bodyCount = 0;
 
 	[Signal] public delegate void ButtonPressedEventHandler();

@@ -3,12 +3,12 @@ using _svetlogo.Entities;
 
 namespace _svetlogo.Systems
 {
-	public partial class Overload : Node
+	public partial class Overflow : Node
 	{
 		[Export] private float mass_treshold;
 		[Export]private float mass;
 
-		private bool overload = false;
+		public bool IsOverflowed { get; private set; } = false;
 
 		[Signal]
 		public delegate void OnOverflowEventHandler();
@@ -20,7 +20,7 @@ namespace _svetlogo.Systems
 			this.mass += mass;
 			if (this.mass >= mass_treshold)
 			{
-				overload = true;
+				IsOverflowed = true;
 
 				foreach (Entity entity in Level.instance.Entities)
 				{
@@ -28,7 +28,7 @@ namespace _svetlogo.Systems
 					EmitSignal(SignalName.OnOverflow);
 				}
 			}
-			else if (overload == true)
+			else if (IsOverflowed == true)
 			{
                 foreach (Entity entity in Level.instance.Entities)
                 {
@@ -37,7 +37,7 @@ namespace _svetlogo.Systems
 
                 }
 
-                overload = false;
+                IsOverflowed = false;
             }
 		}
 	}

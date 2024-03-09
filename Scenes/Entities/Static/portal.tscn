@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3a2bov6sfwr6"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Static/Portal/Portal.cs" id="1_vblc7"]
+[ext_resource type="Texture2D" uid="uid://c2bl2e0tmr2ne" path="res://Sprites/Entities/Inanimate/portal.png" id="2_7efg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn0li"]
+radius = 17.0294
+
+[node name="Portal" type="Area2D"]
+collision_layer = 4
+collision_mask = 16
+monitorable = false
+script = ExtResource("1_vblc7")
+
+[node name="Portal" type="Sprite2D" parent="."]
+position = Vector2(-3, 2)
+texture = ExtResource("2_7efg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bn0li")
