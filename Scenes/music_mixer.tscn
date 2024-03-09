@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ieirkrc5ufg3"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/MusicMixer.cs" id="1_b760n"]
+[ext_resource type="AudioStream" uid="uid://cw123mrhkx2n0" path="res://Music/ost.wav" id="2_5lbx2"]
+[ext_resource type="AudioStream" uid="uid://ccavgwhli56xv" path="res://Music/ost_of.wav" id="3_2brhd"]
+
+[node name="MusicMixer" type="Node" node_paths=PackedStringArray("normalPlayer", "overflowPlayer", "restartTimer")]
+script = ExtResource("1_b760n")
+normalMusic = ExtResource("2_5lbx2")
+overflowMusic = ExtResource("3_2brhd")
+normalPlayer = NodePath("NormalMusicPlayer")
+overflowPlayer = NodePath("OverflowMusicPlayer")
+restartTimer = NodePath("RestartTimer")
+fadeTime = 0.5
+
+[node name="NormalMusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="OverflowMusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="finished" from="NormalMusicPlayer" to="." method="OnMusicStopped"]
+[connection signal="timeout" from="RestartTimer" to="." method="OnRestartMusic"]
