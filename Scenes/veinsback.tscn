@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv1gifwts1282"]
+
+[ext_resource type="Texture2D" uid="uid://clq4mmlt6t5os" path="res://Sprites/Backgrounds/veinsback_back.png" id="1_75p6e"]
+[ext_resource type="Texture2D" uid="uid://ck5qdw67l3lf4" path="res://Sprites/Backgrounds/veinsback_backveins.png" id="2_ylqib"]
+[ext_resource type="Texture2D" uid="uid://dujcynlc1unur" path="res://Sprites/Backgrounds/veinsback_topveins.png" id="3_mapvl"]
+
+[node name="Veinsback" type="ParallaxBackground"]
+
+[node name="Background" type="ParallaxLayer" parent="."]
+scale = Vector2(5, 5)
+motion_scale = Vector2(0.25, 0.25)
+
+[node name="VeinsbackBack" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_75p6e")
+
+[node name="Backveins" type="ParallaxLayer" parent="."]
+scale = Vector2(5, 5)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="VeinsbackBackveins" type="Sprite2D" parent="Backveins"]
+texture = ExtResource("2_ylqib")
+
+[node name="Topveins" type="ParallaxLayer" parent="."]
+scale = Vector2(5, 5)
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="VeinsbackTopveins" type="Sprite2D" parent="Topveins"]
+texture = ExtResource("3_mapvl")
