@@ -3,6 +3,7 @@ using Godot;
 
 namespace _svetlogo.Entities.Static
 {
+    [GlobalClass]
     public partial class OverflowCondition : PortalCondition
     {
         [Export] private bool inverse;

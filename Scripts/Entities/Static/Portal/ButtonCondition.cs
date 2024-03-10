@@ -3,6 +3,7 @@ using Godot.Collections;
 
 namespace _svetlogo.Entities.Static
 {
+    [GlobalClass]
     public partial class ButtonCondition : PortalCondition
     {
         [Export] private bool inverse;
