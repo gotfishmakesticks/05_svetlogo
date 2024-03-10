@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://wiefkbd5nkwv"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/Inanimate/Empty.cs" id="1_aa2gd"]
+
+[resource]
+script = ExtResource("1_aa2gd")

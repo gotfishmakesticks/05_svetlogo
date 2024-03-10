@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkvbvl5fjdidb"]
+[gd_scene load_steps=7 format=3 uid="uid://bkvbvl5fjdidb"]
 
 [ext_resource type="PackedScene" uid="uid://u2016u6ap6pn" path="res://Scenes/Entities/Inanimate/Empty/box_empty.tscn" id="1_nvfkl"]
 [ext_resource type="Resource" uid="uid://dkbp7enuikf1i" path="res://Resources/Abilities/Circle.tres" id="2_1nc5g"]
-[ext_resource type="Texture2D" uid="uid://cbhum15a6f0p7" path="res://Sprites/Entities/Inanimate/CE.png" id="2_11267"]
+[ext_resource type="Texture2D" uid="uid://b6cl54e37c3ly" path="res://Sprites/Entities/Inanimate/CE.png" id="2_11267"]
+[ext_resource type="Resource" uid="uid://wiefkbd5nkwv" path="res://Resources/Abilities/Empty.tres" id="3_llx64"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7ipp"]
 radius = 8.0
@@ -10,7 +11,7 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_nw1hr"]
 
 [node name="CircleEmpty" instance=ExtResource("1_nvfkl")]
-abilities = [ExtResource("2_1nc5g")]
+abilities = [ExtResource("2_1nc5g"), ExtResource("3_llx64")]
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_11267")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ButtonCondition" load_steps=2 format=3 uid="uid://co76knu6gpxr5"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Static/Portal/ButtonCondition.cs" id="1_3lton"]
+
+[resource]
+script = ExtResource("1_3lton")
+inverse = false
+_buttons = Array[Node2D]([])

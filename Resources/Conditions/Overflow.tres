@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="OverflowCondition" load_steps=2 format=3 uid="uid://ce02tg3rmypjh"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Static/Portal/OverflowCondition.cs" id="1_gdu8h"]
+
+[resource]
+script = ExtResource("1_gdu8h")
+inverse = false

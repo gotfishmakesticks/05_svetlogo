@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://b344ih32682xy"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Level.cs" id="1_yy0xj"]
+[ext_resource type="Texture2D" uid="uid://cbxwxg21e2o3" path="res://Sprites/Backgrounds/TestGround.png" id="2_a6cpp"]
+[ext_resource type="Script" path="res://Scripts/Systems/Overload.cs" id="3_hevep"]
+[ext_resource type="PackedScene" uid="uid://c0jjjo3aiwuk0" path="res://Scenes/Tilemaps/main.tscn" id="4_skuhp"]
+[ext_resource type="PackedScene" uid="uid://dcg627wdcgwm" path="res://Scenes/Entities/Animate/player.tscn" id="5_sp48f"]
+[ext_resource type="PackedScene" uid="uid://u2016u6ap6pn" path="res://Scenes/Entities/Inanimate/box_empty.tscn" id="6_sdn6r"]
+[ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/box_normal.tscn" id="7_0fjn5"]
+
+[node name="TestingLevel" type="Node2D"]
+script = ExtResource("1_yy0xj")
+
+[node name="TestGround" type="Sprite2D" parent="."]
+position = Vector2(-271, -224)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("2_a6cpp")
+metadata/_edit_lock_ = true
+
+[node name="Overload" type="Node" parent="."]
+script = ExtResource("3_hevep")
+
+[node name="MainTileset" parent="." instance=ExtResource("4_skuhp")]
+layer_0/tile_data = PackedInt32Array(196587, 196608, 0, 196589, 196608, 3, 196588, 196608, 3, 196591, 196608, 3, 196590, 196608, 3, 196592, 196608, 3, 196594, 196608, 3, 196593, 196608, 3, 196596, 196608, 3, 196595, 196608, 3, 196597, 196608, 3, 196599, 196608, 3, 196598, 196608, 3, 196600, 196608, 3, 196602, 196608, 3, 196601, 196608, 3, 196603, 196608, 3, 196604, 196608, 3, 196605, 196608, 3, 196606, 196608, 3, 196607, 196608, 3, 131072, 196608, 3, 131073, 196608, 3, 131074, 196608, 3, 131075, 196608, 3, 131076, 196608, 3, 131077, 196608, 3, 131078, 65536, 2, 65542, 262144, 2, 6, 262144, 2, -65530, 262144, 2, -131066, 262144, 2, -196602, 262144, 2, -262138, 262144, 2, -327674, 262144, 2, -393210, 262144, 2, -458746, 262144, 2, -524282, 262144, 2, -65534, 262144, 0, -131070, 262144, 2, -196606, 262144, 2, -262142, 262144, 2, -327678, 262144, 2, -393214, 262144, 2, -458750, 327680, 3, -524286, 262144, 2, -589822, 262144, 2, -655358, 131072, 0, -851965, 196608, 3, -851964, 196608, 3, -851963, 196608, 3, -851962, 196608, 2, -786426, 262144, 2, -720890, 262144, 2, -655354, 262144, 2, -589818, 262144, 2, -851966, 196608, 3, -458751, 196608, 3, -458752, 196608, 3, -393217, 196608, 3, -393218, 131072, 2, -458754, 262144, 2, -524290, 262144, 2, -589826, 262144, 2, -655362, 262144, 2, -720898, 262144, 2, -786434, 0, 2, -786433, 196608, 3, -851968, 196608, 3, -851967, 196608, 3, 4, 65536, 0, -131068, 65536, 0, -262140, 65536, 0, -393212, 65536, 0, -524284, 65536, 0, -655356, 65536, 0)
+
+[node name="Player" parent="." instance=ExtResource("5_sp48f")]
+position = Vector2(73, -174)
+max_speed = 64.0
+deceleration_time = 0.2
+mass = 20.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-11, -50)
+zoom = Vector2(3, 3)
+
+[node name="BoxEmpty" parent="." instance=ExtResource("6_sdn6r")]
+position = Vector2(-112, -14)
+
+[node name="BoxNormal" parent="." instance=ExtResource("7_0fjn5")]
+position = Vector2(-97, -89)

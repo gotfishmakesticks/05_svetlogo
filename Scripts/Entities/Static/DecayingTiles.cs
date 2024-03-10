@@ -4,7 +4,7 @@ using Godot.Collections;
 namespace _svetlogo.Entities.Static;
 public partial class DecayingTiles : TileMap
 {
-	private bool enabled;
+	private bool enabled = true;
 	public void Set(bool value = false)
 	{
 		for (int i = 0; i < GetLayersCount(); i++)

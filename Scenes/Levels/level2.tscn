@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5aqfwr1f2o0m"]
+[gd_scene load_steps=7 format=3 uid="uid://bnsfjs3okrdye"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Level.cs" id="1_712i7"]
-[ext_resource type="PackedScene" uid="uid://ieirkrc5ufg3" path="res://Scenes/music_mixer.tscn" id="2_cnw23"]
+[ext_resource type="PackedScene" path="res://Scenes/music_mixer.tscn" id="2_cnw23"]
 [ext_resource type="Script" path="res://Scripts/Systems/Overflow.cs" id="3_4il08"]
 [ext_resource type="PackedScene" uid="uid://c0jjjo3aiwuk0" path="res://Scenes/Tilemaps/main.tscn" id="3_n0y7j"]
 [ext_resource type="PackedScene" uid="uid://dcg627wdcgwm" path="res://Scenes/Entities/Animate/player.tscn" id="4_xrkwg"]
-[ext_resource type="PackedScene" uid="uid://bv1gifwts1282" path="res://Scenes/veinsback.tscn" id="5_22qu3"]
+[ext_resource type="PackedScene" path="res://Scenes/veinsback.tscn" id="5_22qu3"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Overflow")]
 script = ExtResource("1_712i7")

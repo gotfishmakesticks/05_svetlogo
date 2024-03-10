@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://u2016u6ap6pn"]
+[gd_scene load_steps=6 format=3 uid="uid://u2016u6ap6pn"]
 
 [ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/Normal/box_normal.tscn" id="1_830sg"]
-[ext_resource type="Texture2D" uid="uid://gupp2y0r2pcl" path="res://Sprites/Entities/Inanimate/BE.png" id="2_h3x3d"]
+[ext_resource type="Resource" uid="uid://wiefkbd5nkwv" path="res://Resources/Abilities/Empty.tres" id="2_fgdx4"]
+[ext_resource type="Texture2D" uid="uid://cwd6fhpiwc4nv" path="res://Sprites/Entities/Inanimate/BE.png" id="2_h3x3d"]
 [ext_resource type="Script" path="res://Scripts/Entities/Inanimate/Killbox.cs" id="3_ut6xj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioxw7"]
 size = Vector2(18, 18)
 
 [node name="BoxEmpty" instance=ExtResource("1_830sg")]
+abilities = [ExtResource("2_fgdx4")]
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_h3x3d")

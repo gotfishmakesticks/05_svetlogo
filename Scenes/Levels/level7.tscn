@@ -1,17 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://blbu41oe37cvu"]
+[gd_scene load_steps=9 format=3 uid="uid://0sbxaonvk355"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Level.cs" id="1_5v0et"]
-[ext_resource type="PackedScene" uid="uid://ieirkrc5ufg3" path="res://Scenes/music_mixer.tscn" id="2_fg2b3"]
-[ext_resource type="PackedScene" uid="uid://5y8r72cy8l3b" path="res://Scenes/overload.tscn" id="3_l74pf"]
-[ext_resource type="AudioStream" uid="uid://dj6fyh42hoyhx" path="res://Music/boss.wav" id="3_uk4c3"]
+[ext_resource type="PackedScene" path="res://Scenes/music_mixer.tscn" id="2_fg2b3"]
+[ext_resource type="PackedScene" path="res://Scenes/overload.tscn" id="3_l74pf"]
+[ext_resource type="AudioStream" uid="uid://dn2ygj62xikie" path="res://Music/boss.wav" id="3_uk4c3"]
 [ext_resource type="PackedScene" uid="uid://c0jjjo3aiwuk0" path="res://Scenes/Tilemaps/main.tscn" id="3_wjsp2"]
 [ext_resource type="PackedScene" uid="uid://dcg627wdcgwm" path="res://Scenes/Entities/Animate/player.tscn" id="4_1knmp"]
-[ext_resource type="AudioStream" uid="uid://cv2s3dxyvq7yy" path="res://Music/boss_of.wav" id="4_qrrj6"]
-[ext_resource type="PackedScene" uid="uid://w0qk4bmodkwg" path="res://Scenes/Entities/Inanimate/Normal/box_normal.tscn" id="8_dx584"]
-[ext_resource type="PackedScene" uid="uid://c47yrgfdmmkho" path="res://Scenes/Entities/Static/button.tscn" id="9_txn6v"]
-[ext_resource type="PackedScene" uid="uid://dugrv0wb8d68g" path="res://Scenes/Entities/Static/weighted_button.tscn" id="10_iddkc"]
-[ext_resource type="PackedScene" uid="uid://bv1gifwts1282" path="res://Scenes/veinsback.tscn" id="11_rq181"]
-[ext_resource type="PackedScene" uid="uid://cire2svgwho68" path="res://Scenes/Entities/Static/lever.tscn" id="12_3qfi2"]
+[ext_resource type="AudioStream" uid="uid://cr1g8ywntwmp5" path="res://Music/boss_of.wav" id="4_qrrj6"]
+[ext_resource type="PackedScene" path="res://Scenes/veinsback.tscn" id="11_rq181"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Overflow")]
 script = ExtResource("1_5v0et")
@@ -34,23 +30,9 @@ max_speed = 64.0
 deceleration_time = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(6.075, 6.075)
-
-[node name="BoxNormal" parent="." instance=ExtResource("8_dx584")]
-position = Vector2(44, -66)
-mass = 2.1
-
-[node name="Button" parent="." instance=ExtResource("9_txn6v")]
-position = Vector2(85, 16)
-
-[node name="WeightedButton" parent="." instance=ExtResource("10_iddkc")]
-position = Vector2(44, 16)
-massTreshold = 2.0
+zoom = Vector2(3, 3)
 
 [node name="Veinsback" parent="." instance=ExtResource("11_rq181")]
-
-[node name="Lever" parent="." instance=ExtResource("12_3qfi2")]
-position = Vector2(-28, 17)
 
 [connection signal="OnOverflow" from="Overload" to="MusicMixer" method="ToggleOverflow" binds= [true]]
 [connection signal="OnOverflowEnd" from="Overload" to="MusicMixer" method="ToggleOverflow" binds= [false]]

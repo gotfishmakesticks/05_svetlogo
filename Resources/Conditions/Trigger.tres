@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TriggerCondition" load_steps=2 format=3 uid="uid://bki8ntog25an1"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Static/Portal/TriggerCondition.cs" id="1_5hhwh"]
+
+[resource]
+script = ExtResource("1_5hhwh")
+inverse = false
+triggers = Array[String]([])
