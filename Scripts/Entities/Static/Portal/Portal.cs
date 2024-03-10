@@ -16,13 +16,14 @@ public partial class Portal : Area2D
 
 		foreach (PortalCondition condition in conditions)
 		{
-			if (condition.CheckCondition(tree) == false)
+			if (condition.CheckCondition(tree,this) == false)
 			{
+				GD.Print("Condition is false");
 				return;
 			}
 		}
-
-		tree.ChangeSceneToPacked(scene_to_switch);
+        GD.Print("Condition is true");
+        tree.ChangeSceneToPacked(scene_to_switch);
 	}
 
 	public void Trigger(string trigger)

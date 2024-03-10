@@ -7,13 +7,13 @@ namespace _svetlogo.Entities.Static
     public partial class ButtonCondition : PortalCondition
     {
         [Export] private bool inverse;
-        [Export] private Array<Node2D> _buttons;
+        [Export] private Array<NodePath> _buttons;
 
-        public override bool CheckCondition(SceneTree tree)
+        public override bool CheckCondition(SceneTree tree, Portal portal)
         {
             foreach (var button in _buttons)
             {
-                if (button is IButtonActivated btn)
+                if (portal.GetNode(button) is IButtonActivated btn)
                 {
                     if (btn.Activated == inverse) return false;
                 }

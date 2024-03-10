@@ -8,7 +8,7 @@ namespace _svetlogo.Entities.Static
     {
         [Export] private bool inverse;
 
-        public override bool CheckCondition(SceneTree tree)
+        public override bool CheckCondition(SceneTree tree, Portal portal)
         {
             if (tree.CurrentScene is Level level)
             {

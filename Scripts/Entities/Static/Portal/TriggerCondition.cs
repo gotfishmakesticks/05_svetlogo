@@ -10,7 +10,7 @@ namespace _svetlogo.Entities.Static
         [Export] private Array<string> triggers;
         private Array<string> activatedTriggers;
 
-        public override bool CheckCondition(SceneTree tree)
+        public override bool CheckCondition(SceneTree tree, Portal portal)
         {
             foreach (var trigger in triggers)
             {

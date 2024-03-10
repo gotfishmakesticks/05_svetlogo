@@ -7,7 +7,8 @@ public partial class PhysicalButton : Area2D, IButtonActivated
 	[Export] private Texture2D deactivatedTexture;
 	[Export] private Sprite2D sprite;
 
-	public bool Activated => bodyCount != 0;
+	private bool _activated = false;
+	public bool Activated => _activated;
 	private int bodyCount = 0;
 
 	[Signal] public delegate void ButtonPressedEventHandler();
@@ -21,10 +22,12 @@ public partial class PhysicalButton : Area2D, IButtonActivated
 			{
 				EmitSignal(SignalName.ButtonPressed);
 				sprite.Texture = deactivatedTexture;
-			}
+				_activated = true;
+				
+            }
 		}
 	}
-	public void OnBodyExited(Node body)
+    public void OnBodyExited(Node body)
 	{
         if (body is RigidBody2D)
 		{
@@ -32,6 +35,7 @@ public partial class PhysicalButton : Area2D, IButtonActivated
 			{
 				EmitSignal(SignalName.ButtonUnpressed);
                 sprite.Texture = activatedTexture;
+                _activated = false;
             }
         }
 	}

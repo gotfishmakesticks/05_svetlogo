@@ -6,5 +6,5 @@ namespace _svetlogo.Entities.Static;
 [GlobalClass]
 public abstract partial class PortalCondition : Resource
 {
-    public abstract bool CheckCondition(SceneTree tree);
+    public abstract bool CheckCondition(SceneTree tree, Portal portal);
 }
