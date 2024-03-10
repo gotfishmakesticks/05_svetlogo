@@ -1,7 +1,7 @@
 using Godot;
 
 namespace _svetlogo.Entities.Static;
-public partial class PhysicalButton : Area2D
+public partial class PhysicalButton : Area2D, IButtonActivated
 {
 	[Export] private Texture2D activatedTexture;
 	[Export] private Texture2D deactivatedTexture;

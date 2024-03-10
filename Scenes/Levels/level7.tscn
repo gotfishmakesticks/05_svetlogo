@@ -34,17 +34,18 @@ max_speed = 64.0
 deceleration_time = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-11, -50)
-zoom = Vector2(3, 3)
+zoom = Vector2(6.075, 6.075)
 
 [node name="BoxNormal" parent="." instance=ExtResource("8_dx584")]
-position = Vector2(200, 5)
+position = Vector2(44, -66)
+mass = 2.1
 
 [node name="Button" parent="." instance=ExtResource("9_txn6v")]
 position = Vector2(85, 16)
 
 [node name="WeightedButton" parent="." instance=ExtResource("10_iddkc")]
 position = Vector2(44, 16)
+massTreshold = 2.0
 
 [node name="Veinsback" parent="." instance=ExtResource("11_rq181")]
 
