@@ -1,15 +1,14 @@
 using Godot;
-using System;
+using Godot.Collections;
 
-public partial class State : Node
+namespace _svetlogo.Systems.StateMachine;
+
+[GlobalClass]
+public abstract partial class State : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public abstract void EnterTree(Dictionary<string, Variant> messages);
+    public abstract void ExitTree();
+    public abstract void Process(double delta);
+    public abstract void PhysicsProcess(double delta);
+    public abstract void Input(Dictionary<string, Variant> messages);
 }
