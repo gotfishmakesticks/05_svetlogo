@@ -13,7 +13,7 @@ public partial class StateMachine : Node
 
     [Signal] public delegate void TransitionedEventHandler(State to_state);
 
-    public override void _Ready()
+    public void EnterTree()
     {
         foreach (var child in GetChildren())
         {
@@ -23,41 +23,46 @@ public partial class StateMachine : Node
             }
         }
 
-        current_state.EnterTree(EMPTY_DICT);
+        if (current_state is IStateEnter stateEnter)
+            stateEnter.EnterTree(EMPTY_DICT);
     }
 
     public override void _Process(double delta)
     {
-        current_state.Process(delta);
+        if (current_state is IStateProcess stateProcess)
+            stateProcess.Process(delta);
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        current_state._PhysicsProcess(delta);
+        if (current_state is IStatePhysicsProcess statePhysics)
+            statePhysics.PhysicsProcess(delta);
     }
 
     public void Transit(string to, Dictionary<string, Variant> message)
     {
         GD.PushError(states.ContainsKey(to));
 
-        current_state.ExitTree();
+        if (current_state is IStateExit stateExit)
+            stateExit.ExitTree();
 
         current_state = states[to];
-        current_state.EnterTree(message);
+        if (current_state is IStateEnter stateEnter)
+            stateEnter.EnterTree(message);
 
         EmitSignal(SignalName.Transitioned);
     }
 
-    public void SendInput(Dictionary<string, Variant> message)
+    public void SendMessage(Dictionary<string, Variant> message)
     {
-        current_state.Input(message);
+        current_state.RecieveMessage(message);
     }
 
-    public void SendInputAll(Dictionary<string, Variant> message)
+    public void SendMessageAll(Dictionary<string, Variant> message)
     {
         foreach (var state in states.Values)
         {
-            state.Input(message);
+            state.RecieveMessage(message);
         }
     }
 
